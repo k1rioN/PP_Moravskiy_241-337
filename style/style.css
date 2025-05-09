@@ -1,0 +1,107 @@
+/* Сброс базовых стилей */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Цветовая палитра */
+  :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #2980b9;
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --footer-color: #ecf0f1;
+  }
+  
+  /* Общие стили */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Централизованный контейнер */
+  main, header, footer {
+    max-width: 960px;
+    margin: auto;
+    padding: 1.5rem;
+  }
+  
+  /* Заголовки */
+  h1, h2, h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* Навигация */
+  nav {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  nav a {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: var(--accent-color);
+  }
+  
+  /* Основной контент */
+  main section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  /* Списки */
+  ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+  }
+  
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Журнал статей */
+  article {
+    margin-bottom: 1.5rem;
+  }
+  
+  article h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Подвал */
+  footer {
+    background-color: var(--footer-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 600px) {
+    nav a {
+      display: block;
+      margin: 0.5rem auto;
+    }
+  }
+  
