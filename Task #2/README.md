@@ -51,7 +51,51 @@ mkdir mini-router
 cd mini-router
 npm init -y
 
+## Создание express.js
+
+```
+exports = module.exports = createApplication;
+
+function createApplication() {
+  let app = function(req, res, next) {
+    app.handle(req, res, next);
+  };
+
+  // Миксовать методы
+  mixin(app, require('./app'), false);
+
+  app.init();
+  return app;
+}
+
+```
+
+## Создание App.js
+
+```
+methods.forEach(function(method) {
+  app[method] = function(path, ...handlers) {
+    this.lazyrouter();
+    const route = this._router.route(path);
+    route[method](...handlers);
+    return this;
+  };
+});
+
+app.listen = function(...args) {
+  const server = http.createServer(this);
+  return server.listen(...args);
+};
+
+app.handle = function(req, res, out) {
+  this._router.handle(req, res, out);
+};
+
+
+```
+
 ## Создание router.js
+```
 
 // router.js
 const Layer = require('./layer');
@@ -85,8 +129,11 @@ class Router {
 
 module.exports = Router;
 
+```
+
 ## Создание index.js
 
+```
 // index.js
 const http = require('http');
 const Router = require('./router');
@@ -112,6 +159,8 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
   console.log('Сервер работает на http://localhost:3000');
 });
+
+```
 
 ## Поток обработки запроса
 
