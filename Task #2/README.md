@@ -49,9 +49,9 @@ Task #2/
 
 ### Инициализация проекта
 
-mkdir mini-router
-cd mini-router
-npm init -y
+- mkdir mini-router
+- cd mini-router
+- npm init -y
 
 ## Создание express.js
 
