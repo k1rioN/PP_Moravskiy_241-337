@@ -40,44 +40,18 @@ Express.js:
 mini-router/
 ├── index.js // Точка входа
 ├── router.js // Класс Router и Route
-└── layer.js // Класс Layer
-
 
 ---
 
 ## 🛠 Пошаговое руководство
 
-### Шаг 1: Инициализация проекта
+### Инициализация проекта
 
 mkdir mini-router
 cd mini-router
 npm init -y
 
-## Шаг 2: Создание layer.js
-js
-Копировать
-Редактировать
-// layer.js
-class Layer {
-  constructor(path, method, handler) {
-    this.path = path;
-    this.method = method;
-    this.handler = handler;
-  }
-
-  match(path, method) {
-    return this.path === path && this.method === method;
-  }
-
-  handle(req, res) {
-    this.handler(req, res);
-  }
-}
-
-module.exports = Layer;
-📌 Назначение: Хранит путь, метод и обработчик, а также умеет проверять, подходит ли запрос.
-
-## Шаг 3: Создание router.js
+## Создание router.js
 
 // router.js
 const Layer = require('./layer');
@@ -111,7 +85,7 @@ class Router {
 
 module.exports = Router;
 
-## Шаг 4: Создание index.js
+## Создание index.js
 
 // index.js
 const http = require('http');
