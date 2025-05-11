@@ -39,7 +39,7 @@
 ## 📂 Структура проекта
 
 ```
-beautiful-project-site/
+Site/
 ├── index.html
 ├── about.html
 ├── team.html
